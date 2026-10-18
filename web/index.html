@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>cbz_crosshair</title>
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+<div id="cbz-xh">
+  <!-- In-game crosshair, centred on the screen. Shown/hidden by the client. -->
+  <div id="xh-overlay" class="hidden" aria-hidden="true"><div id="xh-reticle"></div></div>
+
+  <!-- /crosshair menu -->
+  <aside id="xh-panel" class="hidden" role="dialog" aria-labelledby="xh-title">
+    <header class="head">
+      <div>
+        <h1 id="xh-title" data-t="title"></h1>
+        <p class="muted" data-t="subtitle"></p>
+      </div>
+      <button class="icon-btn" id="xh-close" type="button"><span data-t="close"></span><kbd>Esc</kbd></button>
+    </header>
+
+    <section class="preview" id="xh-preview" data-bg="sky">
+      <div class="preview-art" id="xh-preview-art"></div>
+      <span class="preview-tag" data-t="preview"></span>
+      <div class="bg-switch" role="radiogroup">
+        <button type="button" class="bg-dot" data-bg="sky" data-tt="bg_sky"></button>
+        <button type="button" class="bg-dot" data-bg="dark" data-tt="bg_dark"></button>
+        <button type="button" class="bg-dot" data-bg="light" data-tt="bg_light"></button>
+      </div>
+    </section>
+
+    <div class="row opt-row" id="xh-faint-row">
+      <div class="row-text">
+        <span class="row-title" data-t="faint"></span>
+        <span class="row-hint" data-t="faint_hint"></span>
+      </div>
+      <button type="button" class="switch" role="switch" id="xh-faint" data-tt="faint"></button>
+    </div>
+    <div class="row opt-row" id="xh-hit-row">
+      <div class="row-text">
+        <span class="row-title" data-t="hit_sound"></span>
+        <span class="row-hint" data-t="hit_sound_hint"></span>
+      </div>
+      <button type="button" class="switch" role="switch" id="xh-hit" data-tt="hit_sound"></button>
+    </div>
+
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="presets" data-t="tab_presets"></button>
+      <button type="button" role="tab" data-tab="editor" data-t="tab_editor"></button>
+    </nav>
+
+    <div class="body" id="xh-body">
+      <div class="tab-pane" data-pane="presets"><div class="grid" id="xh-grid"></div></div>
+      <div class="tab-pane" data-pane="editor"><div id="xh-editor"></div></div>
+    </div>
+
+    <div class="sheet hidden" id="xh-sheet">
+      <p class="sheet-text" id="xh-sheet-text"></p>
+      <input class="input mono hidden" id="xh-code" spellcheck="false" autocomplete="off">
+      <p class="sheet-error hidden" id="xh-sheet-error"></p>
+      <div class="sheet-actions">
+        <button type="button" class="btn ghost" id="xh-sheet-cancel" data-t="cancel"></button>
+        <button type="button" class="btn primary" id="xh-sheet-ok"></button>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <button type="button" class="btn" id="xh-copy"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span data-t="copy_code"></span></button>
+      <button type="button" class="btn" id="xh-import"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span data-t="import_code"></span></button>
+      <button type="button" class="btn ghost push icon-only" id="xh-reset" data-tt="reset"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
+    </footer>
+
+    <div class="toast hidden" id="xh-toast" role="status"></div>
+  </aside>
+</div>
+<script src="crosshair.js?v=6"></script>
+<script src="app.js?v=6"></script>
+</body>
+</html>
