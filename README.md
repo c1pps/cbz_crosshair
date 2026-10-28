@@ -7,6 +7,8 @@ no database.
 
 ![CBz Crosshair — live editor and red on target](media/demo.gif)
 
+▶ **[Watch the full demo (1:28)](https://github.com/c1pps/cbz_crosshair/releases/download/v1.0.0/CBz_Crosshair_demo.mp4)**
+
 - **Presets** — small, clean, roleplay-ready: dot, square, cross, circle (or none at all).
 - **Editor** — length, thickness, gap, T-shape, center dot, circle, colour, opacity, outline, with a live preview at
   the centre of your screen. Your own style is kept while you try presets.
